@@ -1,0 +1,21 @@
+# Count frequency of each word
+
+f = open("student.txt", "r")
+
+data = f.read().lower()
+words = data.split()
+
+frequency = {}
+
+for word in words:
+    if word in frequency:
+        frequency[word] = frequency[word] + 1
+    else:
+        frequency[word] = 1
+
+print("Word Frequency:")
+
+for word, count in frequency.items():
+    print(word, ":", count)
+
+f.close()
